@@ -1,12 +1,18 @@
 <div class="page-header" data-ng-controller="HeaderController">
   <div class="logo pull-left">
-    <a class="navbar-brand" href="/" mean-token="'site-title'">MEAN</a>
+    <a class="navbar-brand" href="/" mean-token="'site-title'">MEAN Demo</a>
   </div>
 
   <div class="left pull-left">
     <ul class="navbar-nav nav">
-      <li data-ng-repeat="item in menus.main" ui-route="/{{item.link}}" ng-class="{active: $uiRoute}">
-          <a mean-token="item.link" ui-sref='{{item.link}}'>{{item.title}}</a>
+      <li>
+          <a href='#!/phones'>View Phones</a>
+      </li>
+      <li>
+          <a href='#!/orders'>My Orders</a>
+      </li>
+      <li>
+          <a href='#!/cart'>My Cart</a>
       </li>
     </ul>
   </div>
@@ -29,6 +35,8 @@
             </a>
             <ul class="dropdown-menu">
                 <li><a href="/logout">Signout</a>
+                </li>
+                <li><a href="#!/settings">Settings</a>
                 </li>
             </ul>
         </li>

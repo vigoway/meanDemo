@@ -1,14 +1,15 @@
-<section data-ng-controller="ArticlesController" data-ng-init="findOne()">
-    <span>{{article.created | date:'medium'}}</span> /
-    <span>{{article.user.name}}</span>
-    <h2>{{article.title}}</h2>
-    <div data-ng-show="global.user._id == article.user._id">
-        <a class="btn" href="/#!/articles/{{article._id}}/edit">
-            <i class="glyphicon glyphicon-edit"></i>
-        </a>
-        <a class="btn" data-ng-click="remove();">
-            <i class="glyphicon glyphicon-trash"></i>
-        </a>
-    </div>
-    <div>{{article.content}}</div>
+<section data-ng-controller="PhoneDetailsController" data-ng-init="findOnePhone()">
+<div class="phone-images">
+  <img src="/public/articles/assets/{{phone.imageUrl}}"
+       class="phone"/>
+</div>
+    <h1>{{phone.name}}</h1> 
+    <p>{{phone.description}}</p>
+    <p>{{phone.snippet}}</p>
+
+    <h4> $ 400.00 <!--- or use {{phone.price}} --> </h4> 
+    <a class="btn btn-success" href="" ng-click="add(phone)"> Add to Cart </a> 
+    <a class="btn btn-primary" href="#!/phones"> other options </a>
+    <a class="btn btn-primary" href="#!/cart"> view my cart ({{cartSize}}) </a> 
+
 </section>

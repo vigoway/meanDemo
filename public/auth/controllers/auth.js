@@ -53,4 +53,23 @@ angular.module('mean.controllers.login', [])
                     }
                 });
         };
+    }])
+    .controller('updateCtrl', ['$scope','$rootScope','$http','$location',
+     function($scope, $rootScope, $http, $location) {
+        $http.get('/loggedin').success(function(user) {
+                if (user !== '0') { $scope.user = user; }
+                else {$location.url('/login');}
+        });
+        $scope.update = function() {
+            var user = $scope.user;
+            if (!user.updated) {
+                user.updated = [];
+            }
+            user.updated.push(new Date().getTime());
+
+            user.$update(function() {
+                alert('info updated');
+                $location.path('');
+            });
+        };
     }]);

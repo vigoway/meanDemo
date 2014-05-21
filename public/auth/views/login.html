@@ -1,24 +1,46 @@
-<div data-ng-controller="LoginCtrl">
-    <div class="alert alert-danger animated fadeIn" ng-show="loginerror">{{loginerror}}</div>
-    <h1>Sign in</h1>
-    <form  ng-submit="login()" class="signin form-horizontal">
-        <div class="form-group">
-            <label for="email" class="col-md-4 control-label">Email</label>
-            <div class="col-md-8">
-                <input required id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email"/>
+<div class="row">
+    <div class="col-md-offset-1 col-md-5">
+        <a href="/auth/facebook">
+            <img src="/public/auth/assets/img/icons/facebook.png"/>
+        </a>
+        <a href="/auth/github">
+            <img src="/public/auth/assets/img/icons/github.png"/>
+        </a>
+
+        <a href="/auth/linkedin">
+            <img src="/public/auth/assets/img/icons/linkedin.png"/>
+        </a>
+
+        <a href="/auth/twitter">
+            <img src="/public/auth/assets/img/icons/twitter.png"/>
+        </a><a href="/auth/google">
+        <img src="/public/auth/assets/img/icons/google.png"/>
+    </a>
+    </div>
+</div>
+<div class="col-md-6">
+    <div data-ng-controller="LoginCtrl">
+        <div class="alert alert-danger animated fadeIn" ng-show="loginerror">{{loginerror}}</div>
+        <h1>Sign in</h1>
+        <form  ng-submit="login()" class="signin form-horizontal">
+            <div class="form-group">
+                <label for="email" class="col-md-4 control-label">Email</label>
+                <div class="col-md-8">
+                    <input required id="email" type="email" name="email" placeholder="Email" class="form-control" ng-model="user.email"/>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <label for="password" class="col-md-4 control-label">Password</label>
-            <div class="col-md-8">
-                <input required id="password" type="password" name="password" placeholder="Password" class="form-control" ng-model="user.password"/>
+            <div class="form-group">
+                <label for="password" class="col-md-4 control-label">Password</label>
+                <div class="col-md-8">
+                    <input required id="password" type="password" name="password" placeholder="Password" class="form-control" ng-model="user.password"/>
+                </div>
             </div>
-        </div>
-        <div class="form-group">
-            <div class="col-md-offset-4 col-md-8">
-                <button type="submit" class="btn btn-primary">Sign in</button>&nbsp;
-                or&nbsp;<a ui-sref='auth.register' class="show-signup">Sign up</a>
+            <div class="form-group">
+                <div class="col-md-offset-4 col-md-8">
+                    <button type="submit" class="btn btn-primary">Sign in</button>&nbsp;
+                    or&nbsp;<a ui-sref='auth.register' class="show-signup">Sign up</a>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 </div>

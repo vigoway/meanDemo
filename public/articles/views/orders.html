@@ -1,0 +1,23 @@
+<section data-ng-controller="OrdersController" data-ng-init="find()">
+<div class="container-fluid">
+  <div class="row-fluid">
+Your orders:
+   <hr/>
+    <div class="span10">
+      <!--Body content-->
+      <ul class="phones">
+        <li ng-repeat="order in orders | filter:query | orderBy:orderProp"
+            class="thumbnail phone-listing">
+        <a class="btn right" data-ng-click="remove(order);">
+            <i class="glyphicon glyphicon-remove"></i>
+        </a>
+          <h5> -- total: <kbd>$ {{order.total}}.00</kdb> ({{order.products.length}} phones ordered)  
+           *Shipped to: <kbd class='green'>  {{order.shipped2}}</kbd> </h5>
+          On this date: <kbd class='green'> {{order.date}}</kbd>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>
+</section>

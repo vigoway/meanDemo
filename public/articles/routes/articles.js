@@ -31,9 +31,16 @@ angular.module('mean.articles').config(['$stateProvider',
 
         // states for my app
         $stateProvider
-            .state('all articles', {
-                url: '/articles',
+            .state('all phones', {
+                url: '/phones',
                 templateUrl: 'public/articles/views/list.html',
+                resolve: {
+                    loggedin: checkLoggedin
+                }
+            })
+            .state('all orders', {
+                url: '/orders',
+                templateUrl: 'public/articles/views/orders.html',
                 resolve: {
                     loggedin: checkLoggedin
                 }
@@ -48,6 +55,17 @@ angular.module('mean.articles').config(['$stateProvider',
             .state('edit article', {
                 url: '/articles/:articleId/edit',
                 templateUrl: 'public/articles/views/edit.html',
+                resolve: {
+                    loggedin: checkLoggedin
+                }
+            })
+            .state('phone by id', {
+                url: '/phones/:phoneId',
+                templateUrl: 'public/articles/views/view.html',
+            })
+            .state('cart', {
+                url: '/cart',
+                templateUrl: 'public/articles/views/cart.html',
                 resolve: {
                     loggedin: checkLoggedin
                 }

@@ -16,6 +16,8 @@ var UserSchema = new Schema({
         required: true
     },
     email: String,
+    payment: String,
+    address: String,
     username: {
         type: String,
         unique: true

@@ -1,0 +1,25 @@
+<section data-ng-controller="CartController">
+
+<h3> Your cart: </h3>
+
+<table class="table table-hover">
+ <tr class="active"> 
+ <th> device </th>
+ <th> price </th>
+ <th> quantity </th>
+ <th> actions </th>
+</tr>
+<tr ng-repeat="phone in cart">
+<td> <a href="#!/phones/{{phone.id}}">{{phone.name}}</a> </td>
+<td> $400.00 </td>
+<td> 1 <!-- should be something like {{phone.coutn}} --> </td>
+<td> <a href="" class="btn btn-danger" ng-click="remove(phone)"> remove </a> </td>
+<tr>
+</table>
+<hr/>
+Total: ${{400*cart.length}}.00 <a href="#!/phones"> continue shopping </a> | 
+
+
+<!-- Button trigger modal -->
+<button ng-click="submitOrder()"> checkout </button>
+</section>
